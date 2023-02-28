@@ -177,16 +177,16 @@ def is_connected(G):
 
 #Creates a random graph given i nodes and j edges
 def create_random_graph(i, j):
-    g = Graph(i)
+    graph = Graph(i)
     edges = []
-    for n1 in range(i):
-        for n2 in range(n1+1, i):
-            edges.append((n1, n2))
+    for x in range(i):
+        for y in range(x+1, i):
+            edges.append((x, y))
     random.shuffle(edges)
     for k in range(j):
-        (n1, n2) = edges[k]
-        g.add_edge(n1, n2)
-    return g
+        (x, y) = edges[k]
+        graph.add_edge(x, y)
+    return graph
 
 
 def graphCopy(G):
